@@ -36,7 +36,11 @@ public class GraphicsPanel extends JPanel implements ActionListener, KeyListener
         super.paintComponent(g);
         if (background!=null) {
             g.drawImage(background, 0, 0, null);
+            g.setColor(Color.RED);
+            g.fillRect(50, 100, 100, 50);
+
         }
+
     }
     
     @Override
