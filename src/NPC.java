@@ -16,11 +16,11 @@ public class NPC extends Car{
     private int x;
     private int y;
     private int speed;
+    private int lane;
 
-
-    public NPC(int x, int y, int laneNumber) {
-        super();
-
+    public NPC(int topSpeed, String name, double acceleration, int x, int y, BufferedImage image) {
+        super(topSpeed, name, acceleration, x, y, image);
+        this.lane = lane;
     }
 
     public int getX() {
@@ -31,18 +31,17 @@ public class NPC extends Car{
         return y;
     }
 
+    public int getLane() {
+        return lane;
+    }
+
     //use a timer to generate cars, the maximum time that is allowed to tick should be the minimmum speed of the car
 
     private int generateLane () {
         //if there are more than 3 cars in a lane than make it so you cant generate any car in that lane anymkore
-
-
         //placeholder
         return (int) (Math.random() * 4) + 1;
-
-
     }
-
 
 
 
