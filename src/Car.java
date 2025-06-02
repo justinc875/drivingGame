@@ -24,15 +24,19 @@ public class Car {
     private int x;
     private int y;
     private BufferedImage image;
+    private double deceleration;
+    public double idleSpeed;
     //consider adding an arraylist to do all the upgrades
 
-    public Car(int topSpeed, String name, double acceleration, int x, int y, BufferedImage image) {
+    public Car(int topSpeed, double idleSpeed, double deceleration, String name, double acceleration, int x, int y, BufferedImage image) {
         this.topSpeed = topSpeed;
         this.name = name;
         this.acceleration = acceleration;
         this.x = x;
         this.y = y;
         this.image = image;
+        this.deceleration = deceleration;
+        this.idleSpeed = idleSpeed;
     }
 
     public void move() {
@@ -63,5 +67,21 @@ public class Car {
         int imageWidth = getPlayerImage().getWidth();
         Rectangle rect = new Rectangle(x, y, imageWidth, imageHeight);
         return rect;
+    }
+
+    public int getTopSpeed () {
+        return topSpeed;
+    }
+
+    public double getAcceleration() {
+        return acceleration;
+    }
+
+    public double getDeceleration() {
+        return deceleration;
+    }
+
+    public double getIdleSpeed() {
+        return idleSpeed;
     }
 }
